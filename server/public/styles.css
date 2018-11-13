@@ -1,0 +1,119 @@
+body {
+  margin: 0;
+  background: #c2e59c;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #64b3f4, #c2e59c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #64b3f4, #c2e59c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-repeat: no-repeat, no-repeat;
+  background-position: left top;
+  z-index: 1;
+  min-height: 100vh;
+  letter-spacing: 1.25px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.heading {
+  color: white;
+  text-align: center;
+  font-size: 4rem;
+  margin-top: 7rem;
+  font-weight: 300;
+}
+
+.search-bar {
+  background-color: inherit;
+  border-color: white;
+  color: white;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.search-bar:focus {
+  background-color: inherit;
+  color: white;
+}
+
+.search-button {
+  font-size: 1.1rem;
+}
+
+.search-button:hover {
+  color: #74c947;
+}
+
+.post-container {
+  text-align: center;
+}
+
+.post {
+  height: 250px;
+  width: 19rem;
+  display: inline-block;
+  background: white;
+  vertical-align: -webkit-baseline-middle;
+  padding: 2rem;
+  border-radius: 3%;
+  transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out;
+  border: none;
+  opacity: 0.8;
+  overflow: hidden;
+  font-weight: 500;
+}
+
+.post:hover {
+  -webkit-transform: scale(1.025);
+  -ms-transform: scale(1.03);
+  transform: scale(1.03);
+  opacity: 1;
+}
+
+@media (max-width: 480px) {
+  .search-button {
+    display: inline-block;
+    font-size: 1rem;
+    vertical-align: -webkit-baseline-middle;
+  }
+
+  .search-bar {
+    width: 65%;
+    display: inline-block;
+    font-size: 1rem;
+    vertical-align: -webkit-baseline-middle;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .heading {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .search-button {
+    display: inline-block;
+  }
+
+  .search-bar {
+    width: 65%;
+    display: inline-block;
+  }
+}
+
+.link {
+  color: black;
+  transition: color 0.2s ease-in-out;
+}
+
+.link:hover {
+  color: #17a77b;
+  text-decoration: none;
+}
