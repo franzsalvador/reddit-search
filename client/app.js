@@ -19,7 +19,8 @@ export default class App extends Component {
     this.setState({ userInput })
   }
 
-  handleSearch() {
+  handleSearch(event) {
+    event.preventDefault()
     const { userInput } = this.state
     const query = userInput.replace(/ /g, '')
     fetch(`https://www.reddit.com/r/${query}/new.json?limit=15`)
@@ -29,6 +30,10 @@ export default class App extends Component {
         this.setState({ data })
       })
       .catch(err => console.error(err))
+  }
+
+  handleEnter(event) {
+    event.preventDefault()
   }
 
   render() {
