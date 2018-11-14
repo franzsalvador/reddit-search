@@ -9,7 +9,7 @@
     "node": "10.8.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "start": "node .",
     "build": "browserify -g uglifyify -t babelify client/ -o server/public/main.js",
     "watch:client": "watchify -vd -t babelify client/ -o server/public/main.js",
@@ -44,6 +44,12 @@
       "server/public/"
     ]
   },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "dotenv": "6.0.0",
@@ -63,6 +69,9 @@
     "babelify": "8.0.0",
     "browser-sync": "2.24.5",
     "browserify": "16.2.2",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "4.19.1",
     "eslint-config-standard": "11.0.0",
     "eslint-plugin-import": "2.11.0",
@@ -72,6 +81,8 @@
     "eslint-plugin-standard": "3.1.0",
     "htmlhint": "0.9.13",
     "husky": "1.0.0-rc.2",
+    "jest": "^23.6.0",
+    "jest-enzyme": "^7.0.1",
     "lint-staged": "7.1.0",
     "node-sass": "^4.9.3",
     "npm-run-all": "4.1.3",
