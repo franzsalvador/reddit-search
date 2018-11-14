@@ -45,11 +45,15 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "dotenv": "6.0.0",
     "react": "16.4.1",
     "react-dom": "16.4.1",
+    "react-redux": "^5.1.0",
     "react-transition-group-v2": "^2.4.0",
-    "reactstrap": "6.3.0"
+    "reactstrap": "6.3.0",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "6.26.3",

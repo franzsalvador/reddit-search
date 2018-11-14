@@ -1,10 +1,15 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-export default function Posts({ data }) {
+import { connect } from 'react-redux'
+
+function Posts(props) {
+  const { subreddits } = props
   return (
-    <div className='post-container mt-5'>
-      {data.length > 0 &&
-        data.map((post, index) => {
+    <div className='post-container mt-5' >
+      {
+        subreddits.length > 0 &&
+        subreddits.map((post, index) => {
           const url = `http://www.reddit.com${post.data.permalink}`
           return (
             <div className='post m-3' key={index}>
@@ -20,3 +25,11 @@ export default function Posts({ data }) {
     </div>
   )
 }
+
+Posts.propTypes = {
+  subreddits: PropTypes.array
+}
+
+const mapStateToProps = (state) => ({ subreddits: state.subreddits })
+
+export default connect(mapStateToProps)(Posts)
