@@ -22,17 +22,14 @@ export default class App extends Component {
     const { handleSearch, handleInput } = this
     const { userInput } = this.state
     return (
-      <div>
+      <div className='container' data-test='component-app'>
         <Header />
-        <div className='container'>
-          <div className='heading'>Reddit Search</div>
-          <SearchBar
-            handleSearch={handleSearch}
-            handleInput={handleInput}
-            userInput={userInput} />
-          <Posts
-            userInput={userInput} />
-        </div>
+        <SearchBar
+          handleSearch={handleSearch}
+          handleInput={handleInput}
+          userInput={userInput} />
+        <Posts
+          userInput={userInput} />
       </div>
     )
   }
